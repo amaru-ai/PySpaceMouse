@@ -590,8 +590,8 @@ device_specs = {
         ],  # FIT
         axis_scale=350.0,
     ),
-    "SpaceMouse Wireless [NEW]": DeviceSpec(
-        name="SpaceMouse Wireless [NEW]",
+    "SpaceMouse Wireless BlueTooth": DeviceSpec(
+        name="SpaceMouse Wireless BlueTooth",
         # vendor ID and product ID
         hid_id=[0x256F, 0xC63A],
         # LED HID usage code pair
@@ -886,7 +886,6 @@ def open(
             spec = device_specs[device]
             if dev.vendor_id == spec.hid_id[0] and dev.product_id == spec.hid_id[1]:
                 found_devices.append({"Spec": spec, "HIDDevice": dev})
-                print(f"{device} found")
 
     else:
         print("No HID devices detected")
